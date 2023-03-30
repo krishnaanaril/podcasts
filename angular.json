@@ -3,5 +3,96 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "podcasts-ui": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/podcasts-ui",
+      "sourceRoot": "projects/podcasts-ui/src",
+      "prefix": "pc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/podcasts-ui",
+            "index": "projects/podcasts-ui/src/index.html",
+            "main": "projects/podcasts-ui/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/podcasts-ui/tsconfig.app.json",
+            "assets": [
+              "projects/podcasts-ui/src/favicon.ico",
+              "projects/podcasts-ui/src/assets"
+            ],
+            "styles": [
+              "projects/podcasts-ui/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "podcasts-ui:build:production"
+            },
+            "development": {
+              "browserTarget": "podcasts-ui:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "podcasts-ui:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/podcasts-ui/tsconfig.spec.json",
+            "assets": [
+              "projects/podcasts-ui/src/favicon.ico",
+              "projects/podcasts-ui/src/assets"
+            ],
+            "styles": [
+              "projects/podcasts-ui/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
   }
 }
