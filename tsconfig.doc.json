@@ -1,0 +1,4 @@
+{
+    "include": ["projects/podcasts-ui/src/**/*.ts"],
+    "exclude": ["projects/podcasts-ui/src/test.ts", "projects/podcasts-ui/src/**/*.spec.ts", "projects/podcasts-ui/src/app/file-to-exclude.ts"]
+  }
