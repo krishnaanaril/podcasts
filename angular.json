@@ -22,12 +22,15 @@
             "tsConfig": "projects/podcasts-ui/tsconfig.app.json",
             "assets": [
               "projects/podcasts-ui/src/favicon.ico",
-              "projects/podcasts-ui/src/assets"
+              "projects/podcasts-ui/src/assets",
+              "projects/podcasts-ui/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/podcasts-ui/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "projects/podcasts-ui/ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -84,7 +87,8 @@
             "tsConfig": "projects/podcasts-ui/tsconfig.spec.json",
             "assets": [
               "projects/podcasts-ui/src/favicon.ico",
-              "projects/podcasts-ui/src/assets"
+              "projects/podcasts-ui/src/assets",
+              "projects/podcasts-ui/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/podcasts-ui/src/styles.css"
