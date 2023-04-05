@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RecentPodcastFeed } from '../../models/shared.type';
+import { Feed, RecentPodcastFeed } from '../../models/shared.type';
 
 @Component({
   selector: 'pc-info-card',
@@ -10,5 +10,5 @@ import { RecentPodcastFeed } from '../../models/shared.type';
   styleUrls: ['./info-card.component.css']
 })
 export class InfoCardComponent {
-  @Input() feed!: RecentPodcastFeed;
+  @Input() feed!: Feed;
 }

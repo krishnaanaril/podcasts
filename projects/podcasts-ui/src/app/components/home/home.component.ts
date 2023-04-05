@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';
-import { RecentPodcastFeed } from '../../models/shared.type';
+import { Feed, RecentPodcastFeed } from '../../models/shared.type';
 import { InfoCardComponent } from '../info-card/info-card.component';
 
 @Component({
@@ -14,7 +14,7 @@ import { InfoCardComponent } from '../info-card/info-card.component';
 export class HomeComponent implements OnInit {
 
   recentFeeds: Array<RecentPodcastFeed> = [];
-
+  trendingFeeds: Array<Feed> = [];
   /**
    *
    */
@@ -27,7 +27,12 @@ export class HomeComponent implements OnInit {
       error: error => console.error(error),
       complete: () => console.info('getRecentFeeds complete')
     });
+    this.dataService.getTrending(5,userLanguage).subscribe({
+      next: result => this.trendingFeeds = result.feeds,
+      error: error => console.error(error),
+      complete: () => console.info('getRecentFeeds complete')
+    });
   }
 
-  trackById = (index: number, feed: RecentPodcastFeed) => feed.id;
+  trackById = (index: number, feed: Feed) => feed.id;
 }
