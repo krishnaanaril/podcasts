@@ -1,5 +1,5 @@
 <div class="min-h-screen">
-    <section>
+    <section class="px-4">
         <h2 class="m-2 prose dark:prose-invert text-2xl font-bold">Recent</h2>
         <ul class="overflow-x-scroll flex flex-row">
             <li *ngFor="let feed of recentFeeds; trackBy: trackById">
@@ -7,7 +7,7 @@
             </li>
         </ul>
     </section>
-   <section>
+   <section class="px-4">
     <h2 class="m-2 prose dark:prose-invert text-2xl font-bold">Trending</h2>
     <ul class="overflow-x-scroll flex flex-row">
         <li *ngFor="let feed of trendingFeeds; trackBy: trackById">
