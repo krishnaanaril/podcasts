@@ -57,7 +57,7 @@ export type Category = {
 
 export type CategoriesResponse  = BaseResponse & {    
     count: number,    
-    feeds: Category[]
+    feeds: Array<Category>
 } ;
 
 export type Funding = {

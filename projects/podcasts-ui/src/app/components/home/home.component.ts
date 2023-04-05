@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     this.dataService.getTrending(5,userLanguage).subscribe({
       next: result => this.trendingFeeds = result.feeds,
       error: error => console.error(error),
-      complete: () => console.info('getRecentFeeds complete')
+      complete: () => console.info('getTrending complete')
     });
   }
 
