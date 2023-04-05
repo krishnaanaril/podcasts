@@ -229,7 +229,7 @@ export type RecentPodcastFeed = Omit<Feed, "description | author | image | artwo
 }
 
 export type RecentFeedsResponse = BaseResponse & {
-    feeds: RecentPodcastFeed;
+    feeds: Array<RecentPodcastFeed>;
     count: number;
     max: number;
     since: number;

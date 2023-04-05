@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   ],
   imports: [
     AppRoutingModule,
+    BottomNavComponent,
     BrowserModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

@@ -1,1 +1,8 @@
-<p>home works!</p>
+<div>
+    <h2 class="prose dark:prose-invert">Trending</h2>
+    <ul class="overflow-y-scroll flex flex-col">
+        <li *ngFor="let feed of recentFeeds; trackBy: trackById">
+            <pc-info-card [feed]="feed"></pc-info-card>
+        </li>
+    </ul>
+</div>
