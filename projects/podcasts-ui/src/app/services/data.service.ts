@@ -113,7 +113,7 @@ export class DataService {
   }
 
   getPodcastsById(
-    id?: number,
+    id?: string,
   ): Observable<PodcastsByIdResponse> {
     let qs: AnyQueryOptions = {
       id
