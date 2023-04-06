@@ -1,6 +1,6 @@
 <div>
     <router-outlet></router-outlet>
-    <pc-main-player *ngIf="isMainPlayerVisible" class="absolute top-0 z-10"></pc-main-player>
+    <pc-main-player [style.visibility]="isMainPlayerVisible ? 'visible' : 'hidden'" class="absolute top-0 z-10"></pc-main-player>
     <div class="sticky bottom-0">
         <pc-mini-player class="w-screen" (click)="showMainPlayer()"></pc-mini-player>
         <pc-bottom-nav class="w-screen"></pc-bottom-nav>
