@@ -2,7 +2,7 @@
     <router-outlet></router-outlet>
     
     <div class="fixed bottom-0">
-        <pc-mini-player *ngIf="currentAudio" class="max-w-screen" (click)="showMainPlayer()" [currentAudio]="currentAudio"></pc-mini-player>
+        <pc-mini-player *ngIf="currentAudio" class="max-w-screen" (miniPlayerClick)="showMainPlayer()" [currentAudio]="currentAudio"></pc-mini-player>
         <pc-bottom-nav class="w-screen"></pc-bottom-nav>
     </div>
 </div>

@@ -10,9 +10,11 @@ export class MessageService {
 
   private mainPlayerState = new Subject<boolean>();
   private activeAudio = new Subject<EpisodesByIdItem>();
+  private isPlaying = new Subject<boolean>();
 
   mainPlayerState$ = this.mainPlayerState.asObservable();
   activeAudio$ = this.activeAudio.asObservable();
+  isPlaying$ = this.isPlaying.asObservable();
 
   constructor() { }
 
@@ -22,5 +24,14 @@ export class MessageService {
 
   changeAudio(currentAudio: EpisodesByIdItem) {
     this.activeAudio.next(currentAudio);
+    this.playAudio();
+  }
+
+  playAudio() {
+    this.isPlaying.next(true);
+  }
+
+  pauseAudio() {
+    this.isPlaying.next(false);
   }
 }
