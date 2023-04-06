@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EpisodesByIdItem } from '../../models/shared.type';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'pc-mini-player',
@@ -9,5 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./mini-player.component.css']
 })
 export class MiniPlayerComponent {
+
+  @Input() currentAudio: EpisodesByIdItem | undefined;
+
+  constructor(private messageService: MessageService) {}
 
 }

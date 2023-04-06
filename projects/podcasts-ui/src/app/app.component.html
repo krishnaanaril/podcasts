@@ -1,10 +1,11 @@
-<div [style.visibility]="isMainPlayerVisible ? 'hidden' : 'visible'">
+<div [style.display]="isMainPlayerVisible ? 'none' : ''">
     <router-outlet></router-outlet>
     
-    <div class="sticky bottom-0">
-        <pc-mini-player class="w-screen" (click)="showMainPlayer()"></pc-mini-player>
+    <div class="fixed bottom-0">
+        <pc-mini-player *ngIf="currentAudio" class="max-w-screen" (click)="showMainPlayer()" [currentAudio]="currentAudio"></pc-mini-player>
         <pc-bottom-nav class="w-screen"></pc-bottom-nav>
     </div>
 </div>
-<pc-main-player [style.visibility]="isMainPlayerVisible ? 'visible' : 'hidden'"
-        class="absolute top-0 z-10"></pc-main-player>
+<aside class="w-screen h-screen" [class]="mainPlayerClass">
+    <pc-main-player class="absolute top-0 z-10" [currentAudio]="currentAudio"></pc-main-player>
+</aside>

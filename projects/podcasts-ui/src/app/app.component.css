@@ -1,0 +1,12 @@
+.hide-main-player {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0, 0);
+}
+
+.show-main-player {
+    position: fixed;
+    top: 0px;
+    opacity: 1;
+    transform: scale(1, 1);
+}

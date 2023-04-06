@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../services/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { EpisodesByIdItems, PodcastsByIdFeed } from '../../models/shared.type';
+import { EpisodesByIdItem, PodcastsByIdFeed } from '../../models/shared.type';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'pc-feed-details',
@@ -14,9 +15,9 @@ import { EpisodesByIdItems, PodcastsByIdFeed } from '../../models/shared.type';
 export class FeedDetailsComponent implements OnInit {
 
   feedDetails!: PodcastsByIdFeed;
-  episodeItems: Array<EpisodesByIdItems> = [];
+  episodeItems: Array<EpisodesByIdItem> = [];
 
-  constructor(private route: ActivatedRoute, private dataService: DataService) {}
+  constructor(private route: ActivatedRoute, private dataService: DataService, private messageService: MessageService) {}
 
   ngOnInit(): void {
     const feedId = this.route.snapshot.paramMap.get('id');
@@ -35,5 +36,10 @@ export class FeedDetailsComponent implements OnInit {
     }    
   }
 
-  trackById = (index: number, feed: EpisodesByIdItems) => feed.id;
+  changeAudio(episode: EpisodesByIdItem) {
+    console.log(episode);
+    this.messageService.changeAudio(episode);
+  }
+
+  trackById = (index: number, feed: EpisodesByIdItem) => feed.id;
 }

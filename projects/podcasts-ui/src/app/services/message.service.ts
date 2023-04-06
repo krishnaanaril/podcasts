@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { EpisodesByIdItems } from '../models/shared.type';
+import { EpisodesByIdItem } from '../models/shared.type';
 
 
 @Injectable({
@@ -9,7 +9,7 @@ import { EpisodesByIdItems } from '../models/shared.type';
 export class MessageService {
 
   private mainPlayerState = new Subject<boolean>();
-  private activeAudio = new Subject<EpisodesByIdItems>();
+  private activeAudio = new Subject<EpisodesByIdItem>();
 
   mainPlayerState$ = this.mainPlayerState.asObservable();
   activeAudio$ = this.activeAudio.asObservable();
@@ -18,5 +18,9 @@ export class MessageService {
 
   hideMainPlayer() {
     this.mainPlayerState.next(false);
+  }
+
+  changeAudio(currentAudio: EpisodesByIdItem) {
+    this.activeAudio.next(currentAudio);
   }
 }

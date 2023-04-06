@@ -269,7 +269,7 @@ export type EpisodesByIdLiveItems = RecentEpisodeFeed & {
     transcriptUrl: string;
 }
 
-export type EpisodesByIdItems = RecentEpisodeFeed & {
+export type EpisodesByIdItem = RecentEpisodeFeed & {
     duration: number;
     feedDead: number;
     feedDuplicateOf: number;
@@ -285,7 +285,7 @@ export type EpisodesByIdItems = RecentEpisodeFeed & {
 
 export type EpisodesByIdResponse = BaseResponse & {
     liveItems: Array<EpisodesByIdLiveItems>;
-    items: Array<EpisodesByIdItems>;
+    items: Array<EpisodesByIdItem>;
     count: number;
     query: string | string[];
 }
