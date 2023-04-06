@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'podcasts-ui';
+  isMainPlayerVisible: boolean = false;
+
+  showMainPlayer() {
+    this.isMainPlayerVisible = !this.isMainPlayerVisible;
+  }
 }

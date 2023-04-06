@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component';
+import { MainPlayerComponent } from './components/main-player/main-player.component';
+import { MiniPlayerComponent } from './components/mini-player/mini-player.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { BottomNavComponent } from './components/bottom-nav/bottom-nav.component
     BottomNavComponent,
     BrowserModule,
     HttpClientModule,
+    MainPlayerComponent,
+    MiniPlayerComponent,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

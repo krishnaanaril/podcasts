@@ -1,4 +1,8 @@
 <div>
     <router-outlet></router-outlet>
-    <pc-bottom-nav class="sticky bottom-0 w-screen"></pc-bottom-nav>
+    <pc-main-player *ngIf="isMainPlayerVisible" class="absolute top-0 z-10"></pc-main-player>
+    <div class="sticky bottom-0">
+        <pc-mini-player class="w-screen" (click)="showMainPlayer()"></pc-mini-player>
+        <pc-bottom-nav class="w-screen"></pc-bottom-nav>
+    </div>    
 </div>
