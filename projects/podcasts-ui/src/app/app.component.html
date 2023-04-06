@@ -1,8 +1,10 @@
-<div>
+<div [style.visibility]="isMainPlayerVisible ? 'hidden' : 'visible'">
     <router-outlet></router-outlet>
-    <pc-main-player [style.visibility]="isMainPlayerVisible ? 'visible' : 'hidden'" class="absolute top-0 z-10"></pc-main-player>
+    
     <div class="sticky bottom-0">
         <pc-mini-player class="w-screen" (click)="showMainPlayer()"></pc-mini-player>
         <pc-bottom-nav class="w-screen"></pc-bottom-nav>
-    </div>    
+    </div>
 </div>
+<pc-main-player [style.visibility]="isMainPlayerVisible ? 'visible' : 'hidden'"
+        class="absolute top-0 z-10"></pc-main-player>
