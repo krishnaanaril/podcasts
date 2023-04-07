@@ -9,7 +9,7 @@
                 </button>
             
             <div class="w-full">
-                <input type="search" name="searchText" id="searchText" class="w-full form-input rounded-full" (input)="searchPodcasts($event)">
+                <input type="search" name="searchText" id="searchText" class="w-full form-input rounded-full" [value]="userInput" (input)="searchPodcasts($event)">
             </div>
         </div>
     </section>

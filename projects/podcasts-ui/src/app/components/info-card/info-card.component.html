@@ -1,5 +1,5 @@
 <figure class="w-36 m-2">
-    <img [src]="feed.image" [alt]="feed.title"  width="200" height="200" priority >
+    <img [src]="feed.image" [alt]="feed.title"  width="200" height="200" priority class="object-cover max-h-36" >
     <figcaption class="prose dark:prose-invert text-ellipsis line-clamp-2 overflow-hidden text-center leading-5">
         <b>
             <a routerLink="/feed/{{feed.id}}">
