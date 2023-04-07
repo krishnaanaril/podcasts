@@ -10,7 +10,7 @@
             </div>
         </div>
         <div>            
-            <p >{{feedDetails.description}}</p>
+            <p>{{feedDetails.description}}</p>
         </div>
     </section>
     <section class="px-4">
@@ -21,7 +21,7 @@
                     <img [src]="episode.feedImage" alt="" class="w-12 h-12 object-contain">
                     <h2 class="ml-2 prose dark:prose-invert text-ellipsis line-clamp-2 font-bold">{{episode.title}}</h2>
                 </div>
-                <p class="prose dark:prose-invert text-ellipsis line-clamp-2">{{episode.description}}</p>
+                <p class="prose dark:prose-invert text-ellipsis line-clamp-2" [innerHTML]="episode.description"></p>
                 <div class="flex flex-row justify-between items-center">
                     <div  class="flex flex-row">
                         <button type="button" class="m-2">

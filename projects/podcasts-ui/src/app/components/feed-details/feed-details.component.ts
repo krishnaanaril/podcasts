@@ -31,7 +31,7 @@ export class FeedDetailsComponent implements OnInit {
       this.dataService.getEpisodesById(feedId).subscribe({
         next: result => this.episodeItems = result.items,
         error: error => console.error(error),
-        complete: () => console.info('getPodcastsById complete')
+        complete: () => console.info('getEpisodesById complete')
       });
     }    
   }
