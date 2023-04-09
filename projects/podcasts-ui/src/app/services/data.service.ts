@@ -128,8 +128,7 @@ export class DataService {
   ): Observable<PodcastsByIdResponse> {
     let qs: AnyQueryOptions = {
       medium
-    }
-    console.log(qs, medium);
+    }    
     const result = this.fetch<PodcastsByIdResponse>("/podcasts/bymedium", qs);
     return result;
   }

@@ -1,26 +1,46 @@
 <div class="min-h-screen w-screen bg bg-gray-200 dark:bg-gray-700">
-    <button type="button" (click)="hideMainPlayer()">
-        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#000000"
-            class="fill-gray-700 dark:fill-gray-200">
-            <path d="M0 0h24v24H0V0z" fill="none" />
-            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
-        </svg>
-    </button>
-    <div class="p-2">
+    <div class="flex flex-row">
+        <div>
+            <button type="button" (click)="hideMainPlayer()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#000000"
+                    class="fill-gray-700 dark:fill-gray-200">
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                </svg>
+            </button>
+        </div>
+        <div class="w-full flex flex-col justify-center">
+            <h2 class="prose dark:prose-invert text-sm">{{currentEpisode.feedTitle}}</h2>
+        </div>
+        <div>
+            <button type="button" (click)="hideMainPlayer()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 0 24 24" width="48px" fill="#000000"
+                    class="fill-gray-700 dark:fill-gray-200">
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="px-6 py-4">
         <img [src]="currentEpisode.feedImage" alt="" class="w-full">
     </div>
-    <div class="px-4">
+    <div class="flex flex-col px-4">
+        <p class="prose dark:prose-invert text-lg font-bold line-clamp-1 text-ellipsis px-2">{{currentEpisode.title}}</p>
+        <p class="prose dark:prose-invert line-clamp-1 text-ellipsis px-2">{{currentEpisode.feedTitle}}</p>
+    </div>
+    <div class="px-4 pt-4">
         <input #seekSlider type="range" name="seek-slider" id="seek-slider" class="w-full" value="0">
         <div class="flex flex-row justify-between">
-            <span id="current-time">0.00</span>
-            <span #duration id="duration">3.45</span>
+            <span class="prose dark:prose-invert text-xs" id="current-time">0.00</span>
+            <span class="prose dark:prose-invert text-xs" #duration id="duration">3.45</span>
         </div>
     </div>
     <div class="flex flex-row justify-center">
         <div>
             <button *ngIf="isPlaying === false" class="p-2" type="button" (click)="playAudio()">
-                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="48px" viewBox="0 0 20 20"
-                    width="48px" fill="#000000">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="72px" viewBox="0 0 20 20"
+                    width="72px" fill="#000000">
                     <g>
                         <rect fill="none" height="20" width="20" />
                     </g>
@@ -30,8 +50,8 @@
                 </svg>
             </button>
             <button *ngIf="isPlaying === true" class="p-2" (click)="pauseAudio()">
-                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="48px" viewBox="0 0 24 24"
-                    width="48px" fill="#000000">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="72px" viewBox="0 0 24 24"
+                    width="72px" fill="#000000">
                     <g>
                         <rect fill="none" height="24" width="24" />
                         <rect fill="none" height="24" width="24" />

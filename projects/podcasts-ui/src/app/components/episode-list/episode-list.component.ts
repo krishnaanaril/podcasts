@@ -22,8 +22,9 @@ export class EpisodeListComponent implements OnInit {
   ngOnInit(): void {
     this.messageService.activeEpisode$.subscribe({
       next: result => {
-        this.isPlaying = result.isPlaying; 
-        console.log(`isPlaying mini in list: ${this.isPlaying}`)
+        if(this.episode.id === result.episodeId) {
+          this.isPlaying = result.isPlaying; 
+        }        
       },
       error: error => console.error(error),
       complete: () => console.info('isPlaying$ complete')

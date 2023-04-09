@@ -39,8 +39,7 @@ export class SearchComponent implements OnInit, AfterViewInit {
       distinctUntilChanged()
     ).subscribe((searchText: string) => {
       const normalizedSearchText = searchText.trim().toLowerCase();
-      const encodedSearchText = encodeURIComponent(normalizedSearchText);
-      console.log(this.userInput);
+      const encodedSearchText = encodeURIComponent(normalizedSearchText);      
       const queryParams = {
         text: encodedSearchText,        
       };

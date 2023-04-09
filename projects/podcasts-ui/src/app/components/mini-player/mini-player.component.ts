@@ -21,8 +21,7 @@ export class MiniPlayerComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.messageService.activeEpisode$.subscribe({
       next: result => {
-        this.isPlaying = result.isPlaying; 
-        console.log(`isPlaying mini: ${this.isPlaying}`)
+        this.isPlaying = result.isPlaying;         
       },
       error: error => console.error(error),
       complete: () => console.info('isPlaying$ complete')
