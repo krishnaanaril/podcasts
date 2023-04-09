@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
 import { DataService } from '../../services/data.service';
@@ -13,8 +13,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, AfterViewInit {
 
+  @ViewChild('searchInput') searchInput!: ElementRef;
   searchSub$ = new Subject<string>();
   searchFeeds: Array<SearchFeed> = [];
   userInput = '';
@@ -51,6 +52,10 @@ export class SearchComponent implements OnInit {
       this.searchByText(normalizedSearchText);
     });
   }  
+
+  ngAfterViewInit(): void {
+    this.searchInput.nativeElement.focus();
+  }
 
   searchByText(text: string) {
     this.dataService.searchByTerm(text).subscribe({
