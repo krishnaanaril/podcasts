@@ -2,3 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+svg {
+    @apply  fill-gray-700 dark:fill-gray-200
+}

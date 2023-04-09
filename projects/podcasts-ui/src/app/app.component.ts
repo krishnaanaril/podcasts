@@ -10,7 +10,7 @@ import { EpisodesByIdItem } from './models/shared.type';
 export class AppComponent implements OnInit {
   title = 'podcasts-ui';
   isMainPlayerVisible: boolean = false;
-  currentAudio: EpisodesByIdItem | undefined;
+  currentEpisode: EpisodesByIdItem | undefined;
   mainPlayerClass: string = 'hide-main-player';
 
   constructor(private messageService: MessageService) {}
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     });
 
     this.messageService.activeAudio$.subscribe({
-      next: result => this.currentAudio = result,
+      next: result => this.currentEpisode = result,
       error: error => console.error(error),
       complete: () => console.info('activeAudio$ complete')
     });

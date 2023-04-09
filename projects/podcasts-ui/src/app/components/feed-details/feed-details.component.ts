@@ -36,8 +36,7 @@ export class FeedDetailsComponent implements OnInit {
     }    
   }
 
-  changeAudio(episode: EpisodesByIdItem) {
-    console.log(episode);
+  changeAudio(episode: EpisodesByIdItem) {    
     this.messageService.changeAudio(episode);
   }
 

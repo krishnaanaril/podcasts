@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'media',
   content: [
     "./projects/podcasts-ui/src/**/*.{html,ts}",
   ],
