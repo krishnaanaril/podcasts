@@ -281,6 +281,7 @@ export type EpisodesByIdItem = RecentEpisodeFeed & {
     persons: Array<Person>;
     socialInteract: Array<SocialInteract>;
     value: ValueForValue;
+    feedTitle: string;
 }
 
 export type EpisodesByIdResponse = BaseResponse & {

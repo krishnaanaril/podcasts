@@ -1,15 +1,15 @@
 <div class="flex flex-row bg-gray-200 dark:bg-gray-700 m-2 py-4">
     <div (click)="showMainPlayer()">
-        <p class="prose dark:prose-invert text-sm line-clamp-2 text-ellipsis">{{currentAudio?.title}}</p>
+        <p class="prose dark:prose-invert text-sm line-clamp-2 text-ellipsis">{{currentEpisode?.title}}</p>
     </div>
     <div>
-        <button *ngIf="!isPlaying" type="button">
+        <button *ngIf="isPlaying === false" type="button" (click)="playAudio()">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000" class="fill-gray-700 dark:fill-gray-200">
                 <path d="M0 0h24v24H0z" fill="none"/>
                 <path d="M8 5v14l11-7z"/>
             </svg>
         </button>
-        <button *ngIf="isPlaying" type="button">
+        <button *ngIf="isPlaying === true" type="button" (click)="pauseAudio()">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000" class="fill-gray-700 dark:fill-gray-200">
                 <path d="M0 0h24v24H0z" fill="none"/>
                 <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
