@@ -1,0 +1,98 @@
+input[type="range"] {
+    --seek-before-width: 0%;
+    --volume-before-width: 75%;
+    --buffered-width: 0%;
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, rgba(0, 125, 181, 0.6) var(--buffered-width), rgba(0, 125, 181, 0.2) var(--buffered-width));
+    height: 0.5rem;
+    border-radius: 2rem;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+    background: linear-gradient(to right, rgba(0, 125, 181, 0.6) var(--buffered-width), rgba(0, 125, 181, 0.2) var(--buffered-width));
+    height: 0.5rem;
+    border-radius: 2rem;
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+    position: relative;
+    box-sizing: content-box;
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    margin-top: -4px;
+    /* Centers thumb on the track */
+    background-color: #5cd5eb;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+}
+
+/***** Firefox *****/
+input[type="range"]::-moz-range-thumb {
+    border: none;
+    /*Removes extra border that FF applies*/
+    border-radius: 0;
+    /*Removes default border-radius that FF applies*/
+    background-color: #5cd5eb;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+}
+
+/***** hover Styles *****/
+/* Removes default hover */
+input[type="range"]:hover {
+    outline: none;
+}
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]:hover::-webkit-slider-thumb {
+    border: 1px solid #053a5f;
+    outline: 3px solid #053a5f;
+    outline-offset: 0.125rem;
+}
+
+/******** Firefox ********/
+input[type="range"]:hover::-moz-range-thumb {
+    border: 1px solid #053a5f;
+    outline: 3px solid #053a5f;
+    outline-offset: 0.125rem;
+}
+
+input[type="range"]::before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0;
+    height: 0.5rem;
+    width: var(--seek-before-width);
+    background-color: #007db5;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+input[type="range"]::-moz-range-progress {
+    background-color: #007db5;
+    height: 0.5rem;
+    border-radius: 2rem;
+}
+
+/***********IE*************/
+input[type="range"]::-ms-fill-lower {
+    background-color: #007db5;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: linear-gradient(to right, rgba(0, 125, 181, 0.6) var(--buffered-width), rgba(0, 125, 181, 0.2) var(--buffered-width));
+}

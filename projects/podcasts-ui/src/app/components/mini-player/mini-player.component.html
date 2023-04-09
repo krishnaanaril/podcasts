@@ -1,6 +1,6 @@
 <div class="flex flex-row bg-gray-200 dark:bg-gray-700 m-2 py-4">
     <div (click)="showMainPlayer()">
-        <p class="prose dark:prose-invert text-sm line-clamp-2 text-ellipsis">{{currentEpisode?.title}}</p>
+        <p class="prose dark:prose-invert text-sm line-clamp-2 text-ellipsis">{{currentEpisode.title}}</p>
     </div>
     <div>
         <button *ngIf="isPlaying === false" type="button" (click)="playAudio()">

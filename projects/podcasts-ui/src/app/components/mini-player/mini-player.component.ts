@@ -12,16 +12,17 @@ import { MessageService } from '../../services/message.service';
 })
 export class MiniPlayerComponent implements OnInit, OnChanges {
 
-  @Input() currentEpisode: EpisodesByIdItem | undefined;
+  @Input() currentEpisode!: EpisodesByIdItem ;
   @Output() miniPlayerClick = new EventEmitter<boolean>();
   isPlaying = false;
 
   constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.messageService.isPlaying$.subscribe({
+    this.messageService.activeEpisode$.subscribe({
       next: result => {
-        this.isPlaying = result; console.log(`isPlaying mini: ${this.isPlaying}`)
+        this.isPlaying = result.isPlaying; 
+        console.log(`isPlaying mini: ${this.isPlaying}`)
       },
       error: error => console.error(error),
       complete: () => console.info('isPlaying$ complete')
@@ -30,8 +31,8 @@ export class MiniPlayerComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
-    const currentValue: EpisodesByIdItem | undefined = changes['currentEpisode'].currentValue;
-    const previousValue: EpisodesByIdItem | undefined = changes['currentEpisode'].previousValue;    
+    const currentValue: EpisodesByIdItem  = changes['currentEpisode'].currentValue;
+    const previousValue: EpisodesByIdItem  = changes['currentEpisode'].previousValue;    
   }
 
   showMainPlayer() {
@@ -39,11 +40,11 @@ export class MiniPlayerComponent implements OnInit, OnChanges {
   }
 
   playAudio() {
-    this.messageService.playAudio();
+    this.messageService.playAudio(this.currentEpisode.id);
   }
 
   pauseAudio() {
-    this.messageService.pauseAudio();
+    this.messageService.pauseAudio(this.currentEpisode.id);
   }
 
 }

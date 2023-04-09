@@ -10,7 +10,7 @@ import { EpisodesByIdItem } from './models/shared.type';
 export class AppComponent implements OnInit {
   title = 'podcasts-ui';
   isMainPlayerVisible: boolean = false;
-  currentEpisode: EpisodesByIdItem | undefined;
+  currentEpisode!: EpisodesByIdItem;
   mainPlayerClass: string = 'hide-main-player';
 
   constructor(private messageService: MessageService) {}

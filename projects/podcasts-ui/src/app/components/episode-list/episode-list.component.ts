@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EpisodesByIdItem } from '../../models/shared.type';
 import { MessageService } from '../../services/message.service';
@@ -10,14 +10,25 @@ import { MessageService } from '../../services/message.service';
   templateUrl: './episode-list.component.html',
   styleUrls: ['./episode-list.component.css']
 })
-export class EpisodeListComponent {
+export class EpisodeListComponent implements OnInit {
 
-  @Input() episode: EpisodesByIdItem | undefined;
+  @Input() episode!: EpisodesByIdItem;
   @Input() author: string | undefined;
   @Input() feedTitle: string | undefined
   isPlaying = false;
 
   constructor(private messageService: MessageService) {}
+
+  ngOnInit(): void {
+    this.messageService.activeEpisode$.subscribe({
+      next: result => {
+        this.isPlaying = result.isPlaying; 
+        console.log(`isPlaying mini in list: ${this.isPlaying}`)
+      },
+      error: error => console.error(error),
+      complete: () => console.info('isPlaying$ complete')
+    });
+  }
 
   changeAudio(episode: EpisodesByIdItem) {    
     episode.author = this.author ?? '';
@@ -28,7 +39,7 @@ export class EpisodeListComponent {
 
   pauseAudio() {
     this.isPlaying = false;
-    this.messageService.pauseAudio();
+    this.messageService.pauseAudio(this.episode.id);
   }
 
 }

@@ -6,6 +6,6 @@
         <pc-bottom-nav class="w-screen"></pc-bottom-nav>
     </div>
 </div>
-<aside class="w-screen h-screen" [class]="mainPlayerClass">
+<aside *ngIf="currentEpisode" class="w-screen h-screen" [class]="mainPlayerClass">
     <pc-main-player class="absolute top-0 z-10" [currentEpisode]="currentEpisode"></pc-main-player>
 </aside>

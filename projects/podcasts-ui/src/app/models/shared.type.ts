@@ -290,3 +290,8 @@ export type EpisodesByIdResponse = BaseResponse & {
     count: number;
     query: string | string[];
 }
+
+export type ActiveEpisode = {
+    isPlaying: boolean;
+    episodeId: number;
+}
