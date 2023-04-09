@@ -5,13 +5,15 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { LibraryComponent } from './components/library/library.component';
 import { SearchComponent } from './components/search/search.component';
 import { FeedDetailsComponent } from './components/feed-details/feed-details.component';
+import { EpisodeDetailsComponent } from './components/episode-details/episode-details.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'library', component: LibraryComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'feed/:id', component: FeedDetailsComponent }
+  { path: 'feed/:id', component: FeedDetailsComponent },
+  { path: 'episode/:id', component: EpisodeDetailsComponent }
 ];
 
 @NgModule({
