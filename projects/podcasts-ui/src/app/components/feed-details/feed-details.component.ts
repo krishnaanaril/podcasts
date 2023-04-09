@@ -4,11 +4,12 @@ import { DataService } from '../../services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { EpisodesByIdItem, PodcastsByIdFeed } from '../../models/shared.type';
 import { MessageService } from '../../services/message.service';
+import { EpisodeListComponent } from '../episode-list/episode-list.component';
 
 @Component({
   selector: 'pc-feed-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, EpisodeListComponent],
   templateUrl: './feed-details.component.html',
   styleUrls: ['./feed-details.component.css']
 })
@@ -16,6 +17,7 @@ export class FeedDetailsComponent implements OnInit {
 
   feedDetails!: PodcastsByIdFeed;
   episodeItems: Array<EpisodesByIdItem> = [];
+  
 
   constructor(private route: ActivatedRoute, private dataService: DataService, private messageService: MessageService) {}
 
@@ -36,11 +38,7 @@ export class FeedDetailsComponent implements OnInit {
     }    
   }
 
-  changeAudio(episode: EpisodesByIdItem) {    
-    episode.author = this.feedDetails.author;
-    episode.feedTitle = this.feedDetails.title;
-    this.messageService.changeAudio(episode);
-  }
+  
 
   trackById = (index: number, feed: EpisodesByIdItem) => feed.id;
 }
