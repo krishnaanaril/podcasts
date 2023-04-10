@@ -75,13 +75,23 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { HomeComponent } from &#x27;./components/home/home.component&#x27;;
+import { ExploreComponent } from &#x27;./components/explore/explore.component&#x27;;
+import { LibraryComponent } from &#x27;./components/library/library.component&#x27;;
+import { SearchComponent } from &#x27;./components/search/search.component&#x27;;
+import { FeedDetailsComponent } from &#x27;./components/feed-details/feed-details.component&#x27;;
+import { EpisodeDetailsComponent } from &#x27;./components/episode-details/episode-details.component&#x27;;
 
 const routes: Routes &#x3D; [
-  { path: &#x27;&#x27;, component: HomeComponent}
+  { path: &#x27;&#x27;, component: HomeComponent },
+  { path: &#x27;explore&#x27;, component: ExploreComponent },
+  { path: &#x27;library&#x27;, component: LibraryComponent },
+  { path: &#x27;search&#x27;, component: SearchComponent },
+  { path: &#x27;feed/:id&#x27;, component: FeedDetailsComponent },
+  { path: &#x27;episode/:id&#x27;, component: EpisodeDetailsComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: &#x27;top&#x27; })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

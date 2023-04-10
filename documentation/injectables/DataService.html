@@ -79,10 +79,40 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#encodeObjectToQueryString" >encodeObjectToQueryString</a>
+                            </li>
+                            <li>
+                                <a href="#fetch" >fetch</a>
+                            </li>
+                            <li>
                                 <a href="#getCategories" >getCategories</a>
                             </li>
                             <li>
+                                <a href="#getEpisodesById" >getEpisodesById</a>
+                            </li>
+                            <li>
+                                <a href="#getPodcastsById" >getPodcastsById</a>
+                            </li>
+                            <li>
+                                <a href="#getPodcastsByMedium" >getPodcastsByMedium</a>
+                            </li>
+                            <li>
+                                <a href="#getRecentEpisodes" >getRecentEpisodes</a>
+                            </li>
+                            <li>
+                                <a href="#getRecentFeeds" >getRecentFeeds</a>
+                            </li>
+                            <li>
+                                <a href="#getSoundbites" >getSoundbites</a>
+                            </li>
+                            <li>
                                 <a href="#getStats" >getStats</a>
+                            </li>
+                            <li>
+                                <a href="#getTrending" >getTrending</a>
+                            </li>
+                            <li>
+                                <a href="#searchByTerm" >searchByTerm</a>
                             </li>
                         </ul>
                     </td>
@@ -107,7 +137,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -154,6 +184,164 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="encodeObjectToQueryString"></a>
+                    <span class="name">
+                        <span ><b>encodeObjectToQueryString</b></span>
+                        <a href="#encodeObjectToQueryString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>encodeObjectToQueryString(qs?: <a href="../undefineds/AnyQueryOptions.html" target="_self">AnyQueryOptions</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="168"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:168</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>qs</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyQueryOptions" target="_self" >AnyQueryOptions</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetch"></a>
+                    <span class="name">
+                        <span ><b>fetch</b></span>
+                        <a href="#fetch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetch(endpoint: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, qs?: <a href="../undefineds/AnyQueryOptions.html" target="_self">AnyQueryOptions</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:193</a></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>endpoint</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>qs</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#AnyQueryOptions" target="_self" >AnyQueryOptions</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;T&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getCategories"></a>
                     <span class="name">
                         <span ><b>getCategories</b></span>
@@ -170,8 +358,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -197,6 +385,504 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getEpisodesById"></a>
+                    <span class="name">
+                        <span ><b>getEpisodesById</b></span>
+                        <a href="#getEpisodesById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getEpisodesById(id?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="137"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#EpisodesByIdResponse" target="_self" >Observable&lt;EpisodesByIdResponse&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPodcastsById"></a>
+                    <span class="name">
+                        <span ><b>getPodcastsById</b></span>
+                        <a href="#getPodcastsById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPodcastsById(id?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#PodcastsByIdResponse" target="_self" >Observable&lt;PodcastsByIdResponse&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPodcastsByMedium"></a>
+                    <span class="name">
+                        <span ><b>getPodcastsByMedium</b></span>
+                        <a href="#getPodcastsByMedium"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPodcastsByMedium(medium?: <a href="../undefineds/Medium.html" target="_self">Medium</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>medium</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#Medium" target="_self" >Medium</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#PodcastsByIdResponse" target="_self" >Observable&lt;PodcastsByIdResponse&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRecentEpisodes"></a>
+                    <span class="name">
+                        <span ><b>getRecentEpisodes</b></span>
+                        <a href="#getRecentEpisodes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getRecentEpisodes(max?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, before?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, excludeString?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fulltext?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>max</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>before</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>excludeString</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>fulltext</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#RecentEpisodesResponse" target="_self" >Observable&lt;RecentEpisodesResponse&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRecentFeeds"></a>
+                    <span class="name">
+                        <span ><b>getRecentFeeds</b></span>
+                        <a href="#getRecentFeeds"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getRecentFeeds(max?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, lang?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, since?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, cat?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, notcat?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>max</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>lang</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>since</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>cat</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>notcat</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;RecentFeedsResponse&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSoundbites"></a>
+                    <span class="name">
+                        <span ><b>getSoundbites</b></span>
+                        <a href="#getSoundbites"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSoundbites(max?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>max</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;SoundbitesResponse&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getStats"></a>
                     <span class="name">
                         <span ><b>getStats</b></span>
@@ -213,8 +899,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:40</a></div>
                 </td>
             </tr>
 
@@ -236,6 +922,266 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTrending"></a>
+                    <span class="name">
+                        <span ><b>getTrending</b></span>
+                        <a href="#getTrending"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTrending(max?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, lang?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, since?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, cat?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, notcat?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>max</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                        <p>Maximum number of items</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>lang</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>since</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>cat</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>notcat</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#TrendingResponse" target="_self" >Observable&lt;TrendingResponse&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Podcasts/Feeds that are trending</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchByTerm"></a>
+                    <span class="name">
+                        <span ><b>searchByTerm</b></span>
+                        <a href="#searchByTerm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchByTerm(q: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, clean?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, max?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, fulltext?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, val?: <a href="../undefineds/Value.html" target="_self">Value</a>, aponly?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">projects/podcasts-ui/src/app/services/data.service.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>q</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>clean</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>max</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>fulltext</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>val</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#Value" target="_self" >Value</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>aponly</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/typealiases.html#SearchResponse" target="_self" >Observable&lt;SearchResponse&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
     </div>
@@ -245,9 +1191,22 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
-import { CategoriesResponse, StatsResponse } from &#x27;../models/shared.type&#x27;;
+import {
+  AnyQueryOptions,
+  CategoriesResponse,
+  EpisodesByIdResponse,
+  Medium,
+  PodcastsByIdResponse,
+  RecentEpisodesResponse,
+  RecentFeedsResponse,
+  SearchResponse,
+  SoundbitesResponse,
+  StatsResponse,
+  TrendingResponse,
+  Value
+} from &#x27;../models/shared.type&#x27;;
 
-const API_URL &#x3D; &quot;http://localhost:3000&quot;
+const API_URL &#x3D; &quot;http://192.168.1.6:3000&quot;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -260,20 +1219,171 @@ export class DataService {
    * 
    * @returns List of podcast categories
    */
-  getCategories() : Observable&lt;CategoriesResponse&gt;{
-    const endpoint &#x3D; &quot;/categories/list&quot;;
-    const result &#x3D; this.http.get&lt;CategoriesResponse&gt;(&#x60;${API_URL}${endpoint}&#x60;)
-    return result;
+  getCategories(): Observable&lt;CategoriesResponse&gt; {
+    return this.fetch&lt;CategoriesResponse&gt;(&quot;/categories/list&quot;);
   }
 
   /**
    * 
    * @returns Stats for the items in podcast index
    */
-  getStats() : Observable&lt;StatsResponse&gt;{
-    const endpoint &#x3D; &quot;/stats/current&quot;;
-    const result &#x3D; this.http.get&lt;StatsResponse&gt;(&#x60;${API_URL}${endpoint}&#x60;)
+  getStats(): Observable&lt;StatsResponse&gt; {
+    return this.fetch&lt;StatsResponse&gt;(&quot;/stats/current&quot;);
+  }
+
+  /**
+   * 
+   * @param {number} max Maximum number of items 
+   * @param lang 
+   * @param since 
+   * @param cat 
+   * @param notcat 
+   * @returns Podcasts/Feeds that are trending
+   */
+  getTrending(
+    max?: number,
+    lang?: string,
+    since?: number,
+    cat?: string,
+    notcat?: string
+  ): Observable&lt;TrendingResponse&gt; {
+    let qs: AnyQueryOptions &#x3D; {
+      max: max ?? 25,
+      lang: lang ?? &#x27;en&#x27;,
+      since: since,
+      cat: cat,
+      notcat: notcat
+    };
+    return this.fetch&lt;TrendingResponse&gt;(&quot;/podcasts/trending&quot;, qs);
+  }
+
+  getSoundbites(
+    max?: number
+  ): Observable&lt;SoundbitesResponse&gt; {
+    let qs: AnyQueryOptions &#x3D; {
+      max: max
+    };
+    return this.fetch&lt;SoundbitesResponse&gt;(&quot;/recent/soundbites&quot;, qs);
+  }
+
+
+  getRecentEpisodes(
+    max?: number,
+    before?: number,
+    excludeString?: string,
+    fulltext?: boolean
+  ): Observable&lt;RecentEpisodesResponse&gt; {
+    let qs: AnyQueryOptions &#x3D; {
+      max: max ?? 25,
+      excludeString: excludeString,
+      before: before,
+      fulltext: fulltext
+    };
+    const result &#x3D; this.fetch&lt;RecentEpisodesResponse&gt;(&quot;/recent/episodes&quot;, qs);
     return result;
+  }
+
+
+  getRecentFeeds(
+    max?: number,
+    lang?: string,
+    since?: number,
+    cat?: string,
+    notcat?: string
+  ): Observable&lt;RecentFeedsResponse&gt; {
+    let qs: AnyQueryOptions &#x3D; {
+      max: max ?? 25,
+      lang: lang ?? &#x27;en&#x27;,
+      since: since,
+      cat: cat,
+      notcat: notcat
+    };
+    const result &#x3D; this.fetch&lt;RecentFeedsResponse&gt;(&quot;/recent/feeds&quot;, qs);
+    return result;
+  }
+
+  getPodcastsById(
+    id?: string,
+  ): Observable&lt;PodcastsByIdResponse&gt; {
+    let qs: AnyQueryOptions &#x3D; {
+      id
+    }
+    const result &#x3D; this.fetch&lt;PodcastsByIdResponse&gt;(&quot;/podcasts/byfeedid&quot;, qs);
+    return result;
+  }
+
+
+  getPodcastsByMedium(
+    medium?: Medium,
+  ): Observable&lt;PodcastsByIdResponse&gt; {
+    let qs: AnyQueryOptions &#x3D; {
+      medium
+    }    
+    const result &#x3D; this.fetch&lt;PodcastsByIdResponse&gt;(&quot;/podcasts/bymedium&quot;, qs);
+    return result;
+  }
+
+
+  getEpisodesById(
+    id?: string,
+  ): Observable&lt;EpisodesByIdResponse&gt; {
+    let qs: AnyQueryOptions &#x3D; {
+      id
+    }
+    const result &#x3D; this.fetch&lt;EpisodesByIdResponse&gt;(&quot;/episodes/byfeedid&quot;, qs);
+    return result;
+  }
+
+
+  searchByTerm(
+    q: string,
+    clean?: boolean,
+    max?: number,
+    fulltext?: boolean,
+    val?: Value,
+    aponly?: boolean
+  ): Observable&lt;SearchResponse&gt; {
+    let qs: AnyQueryOptions &#x3D; {
+      q: q,
+      max: max ?? 25,
+      val: val,
+      aponly: aponly,
+      clean: clean,
+      fulltext: fulltext,
+    };
+    const result &#x3D; this.fetch&lt;SearchResponse&gt;(&quot;/search/byterm&quot;, qs);
+    return result;
+  }
+
+  encodeObjectToQueryString(qs?: AnyQueryOptions) {
+    if (!qs) {
+      return null;
+    }
+
+    return Object.entries(qs)
+      .map(([key, val]) &#x3D;&gt; {
+        if (!val) {
+          return null;
+        }
+
+        if (Array.isArray(val)) {
+          return &#x60;${key}[]&#x3D;${(val as unknown[]).map((v) &#x3D;&gt; encodeURI(&#x60;${v}&#x60;)).join(&quot;,&quot;)}&#x60;;
+        }
+
+        if (val &#x3D;&#x3D;&#x3D; true) {
+          return key;
+        }
+
+        return &#x60;${key}&#x3D;${encodeURI(&#x60;${val}&#x60;)}&#x60;;
+      })
+      .filter((x) &#x3D;&gt; x)
+      .join(&quot;&amp;&quot;);
+  }
+
+  fetch&lt;T&gt;(endpoint: string, qs?: AnyQueryOptions): Observable&lt;T&gt; {
+    const queryString &#x3D; qs ? this.encodeObjectToQueryString(qs) : null;
+    const url &#x3D; &#x60;${API_URL}${endpoint}${queryString ? &#x60;?${queryString}&#x60; : &#x60;&#x60;}&#x60;;
+    return this.http.get&lt;T&gt;(url);
   }
 }
 </code></pre>
