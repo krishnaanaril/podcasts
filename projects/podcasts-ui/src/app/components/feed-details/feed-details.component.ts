@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { EpisodesByIdItem, PodcastsByIdFeed } from '../../models/shared.type';
 import { MessageService } from '../../services/message.service';
 import { EpisodeListComponent } from '../episode-list/episode-list.component';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'pc-feed-details',
@@ -24,21 +25,19 @@ export class FeedDetailsComponent implements OnInit {
   ngOnInit(): void {
     const feedId = this.route.snapshot.paramMap.get('id');
     if(feedId != null) {
-      this.dataService.getPodcastsById(feedId).subscribe({
-        next: result => this.feedDetails = result.feed,
+      forkJoin([
+        this.dataService.getPodcastsById(feedId),
+        this.dataService.getEpisodesById(feedId)
+      ]).subscribe({
+        next: ([podcastResult, episodeResult]) => {
+          this.feedDetails = podcastResult.feed;
+          this.episodeItems = episodeResult.items;
+        },
         error: error => console.error(error),
-        complete: () => console.info('getPodcastsById complete')
-      });
-
-      this.dataService.getEpisodesById(feedId).subscribe({
-        next: result => this.episodeItems = result.items,
-        error: error => console.error(error),
-        complete: () => console.info('getEpisodesById complete')
+        complete: () => console.info('forkJoin complete')
       });
     }    
-  }
-
-  
+  } 
 
   trackById = (index: number, feed: EpisodesByIdItem) => feed.id;
 }

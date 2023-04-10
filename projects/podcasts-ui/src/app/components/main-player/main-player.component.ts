@@ -14,12 +14,15 @@ export class MainPlayerComponent implements OnInit, OnChanges {
 
   @Input() currentEpisode!: EpisodesByIdItem;
   @ViewChild('seekSlider') seekSlider!: ElementRef;
-  @ViewChild('duration') durationContainer!: ElementRef;
   currentAudio = new Audio();
   isPlaying = false;
+  currentTime: string = "0:00"
+  duration: string = "0:00";
+  raf: number;
 
   constructor(private messageService: MessageService) {
     this.currentAudio.preload = 'metadata';
+    this.raf = 0;
   }
 
   ngOnInit(): void {
@@ -29,9 +32,13 @@ export class MainPlayerComponent implements OnInit, OnChanges {
         if (this.isPlaying) {
           console.log("Let's play");
           this.currentAudio?.play();
+          requestAnimationFrame(this.whilePlaying);
           console.log(`volume: ${this.currentAudio.volume}`);
         } else {
           this.currentAudio?.pause();
+          if (this.raf != 0) {
+            cancelAnimationFrame(this.raf);
+          }
         }
       },
       error: error => console.error(error),
@@ -62,6 +69,34 @@ export class MainPlayerComponent implements OnInit, OnChanges {
     this.displayDuration();
     this.setSliderMax();
     this.displayBufferedAmount();
+
+    this.currentAudio.addEventListener('progress', this.displayBufferedAmount);
+
+    this.seekSlider.nativeElement.addEventListener('input', (event: any) => {
+      this.currentTime = this.getTimeCodeFromNum(event.target.value);
+      if (!this.currentAudio.paused && this.raf != null) {
+        cancelAnimationFrame(this.raf);
+      }
+      this.showProgress();
+    });
+
+    this.seekSlider.nativeElement.addEventListener('change', (event: any) => {
+      this.currentAudio.currentTime = this.seekSlider.nativeElement.value;
+      if (!this.currentAudio.paused) {
+        requestAnimationFrame(this.whilePlaying);
+      }
+    });
+  }
+
+  whilePlaying = () => {
+    this.seekSlider.nativeElement.value = Math.floor(this.currentAudio.currentTime);
+    this.currentTime = this.getTimeCodeFromNum(this.seekSlider.nativeElement.value);
+    this.seekSlider.nativeElement.style.setProperty('--seek-before-width', `${this.seekSlider.nativeElement.value / this.seekSlider.nativeElement.max * 100}%`);
+    this.raf = requestAnimationFrame(this.whilePlaying);
+  }
+
+  showProgress() {
+    this.seekSlider.nativeElement.style.setProperty('--seek-before-width', this.seekSlider.nativeElement.value / this.seekSlider.nativeElement.max * 100 + '%');
   }
 
   playAudio() {
@@ -81,24 +116,24 @@ export class MainPlayerComponent implements OnInit, OnChanges {
     let minutes = Math.floor(seconds / 60);
     seconds -= minutes * 60;
     const hours = Math.floor(minutes / 60);
-    minutes -= hours * 60;
-    console.log(`num: ${num}, seconds: ${seconds}, minutes: ${minutes}, hours: ${hours}`);
+    minutes -= hours * 60;    
     if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, '0')}`;
     return `${String(hours).padStart(2, '0')}:${minutes}:${String(
-        seconds % 60
+      seconds % 60
     ).padStart(2, '0')}`;
-}
+  }
 
   displayDuration() {
     console.log(`duration: ${this.currentAudio.duration}, calculated: ${this.getTimeCodeFromNum(this.currentAudio.duration)}`);
-    this.durationContainer.nativeElement.textContent = this.getTimeCodeFromNum(this.currentAudio.duration);
+    this.duration = this.getTimeCodeFromNum(this.currentAudio.duration);
+    console.log(`duration2: ${this.duration}, calculated: ${this.getTimeCodeFromNum(this.currentAudio.duration)}`);
   }
 
   setSliderMax() {
     this.seekSlider.nativeElement.max = Math.floor(this.currentAudio.duration);
   }
 
-  displayBufferedAmount() {
+  displayBufferedAmount = () => {
     const bufferedAmount = Math.floor(this.currentAudio.buffered.end(this.currentAudio.buffered.length - 1));
     console.log(`bufferedAmount: ${bufferedAmount}`);
     this.seekSlider.nativeElement.style.setProperty('--buffered-width', `${(bufferedAmount / this.seekSlider.nativeElement.max) * 100}%`);
